@@ -126,10 +126,3 @@ def logout(token: str = Header(...)):
     del active_sessions[token]
     return {"message": "Logged out successfully"}
 
-
-import os
-import uvicorn
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("test:app", host="0.0.0.0", port=port)
