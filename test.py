@@ -22,13 +22,18 @@ from fastapi.middleware.cors import CORSMiddleware
 # -----------------------------
 # FastAPI app
 # -----------------------------
-app = FastAPI(title="HEMIS Student Portal API")
+
+
 app.add_middleware(
-  CORSMiddleware,
-  allow_origins=["*"],  # or ["*"] for quick testing
-  allow_credentials=True,
-  allow_methods=["*"],
-  allow_headers=["*"],
+    CORSMiddleware,
+    allow_origins=[
+        "https://your-frontend-domain.vercel.app",
+        "https://your-app.railway.app",
+        "http://localhost:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 # -----------------------------
 # In-memory session store
