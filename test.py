@@ -23,7 +23,7 @@ from fastapi.middleware.cors import CORSMiddleware
 # FastAPI app
 # -----------------------------
 
-
+app = FastAPI(title="HEMIS Student Portal API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
